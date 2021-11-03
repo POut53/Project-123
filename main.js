@@ -18,6 +18,7 @@ function press(){
 function draw(){
     background('yellow');
     text(simp,26,100);
+    textSize(diffrence);
 }
 function modelloaded(){
     console.log("PoseNet is Initiaizied");
@@ -27,6 +28,9 @@ function getPose(results){
         console.log(results);
         noseX=results[0].pose.nose.x;
         noseY=results[0].pose.nose.y;
+        leftWrist=results[0].pose.leftWrist.x;
+        rightWrist=results[0].pose.rightWrist.x;
+        diffrence=leftWrist - rightWrist;
         console.log(noseX,noseY);
     }
 }
